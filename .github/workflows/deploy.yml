@@ -9,6 +9,8 @@ jobs:
   build:
     name: Build and Push to ECR
     runs-on: ubuntu-latest
+    env:
+      REF_NAME: ${{ github.ref.name }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -26,7 +28,7 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v1
       - name: Build, Tag, and Push Docker Image
         run: |
-          IMAGE="${{ secrets.ECR_REPOSITORY }}:${{github.ref.name}}"
+          IMAGE="${{ secrets.ECR_REPOSITORY }}:$REF_NAME"
           docker build -t $IMAGE .
           docker push $IMAGE
 
