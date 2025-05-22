@@ -26,7 +26,7 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v1
       - name: Build, Tag, and Push Docker Image
         run: |
-          IMAGE="${{ secrets.ECR_REPOSITORY }}:$GITHUB_REF_NAME"
+          IMAGE="${{ secrets.ECR_REPOSITORY }}:${{github.ref.name}}"
           docker build -t $IMAGE .
           docker push $IMAGE
 
