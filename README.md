@@ -2,7 +2,7 @@
 
 ## Form Data
 Input your data in here:<br/>
-Name : M. Raihan Al Farizy<br/>
+Name : Raihan<br/>
 YourCity : Jakarta Pusat
 
 ## Application Port

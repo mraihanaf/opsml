@@ -18,6 +18,10 @@ output "SNS_TOPIC_ARN" {
 	value = aws_sns_topic.topic.arn
 }
 
+output "ATHENA_DB_NAME" {
+	value = aws_glue_catalog_database.rekognition_db.name
+}
+
 output "ATHENA_SCHEMA_NAME" {
 	value = aws_glue_catalog_database.rekognition_db.name
 }
