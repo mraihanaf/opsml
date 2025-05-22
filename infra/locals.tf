@@ -9,7 +9,7 @@ locals {
 
 	lambdaEnvironmentVariables = {
 		SNS_TOPIC_ARN = aws_sns_topic.topic.arn
-	#	KINESIS_STREAM_NAME = 
+		KINESIS_STREAM_NAME = aws_kinesis_stream.stream.name
 		DEST_BUCKET = aws_s3_bucket.output.bucket
 		TOKEN_TABLE = aws_dynamodb_table.tokens.name
 	}
