@@ -9,3 +9,4 @@ RUN pip install gunicorn
 COPY . .
 
 CMD ["gunicorn", "--bind", "0.0.0.0:2000", "app:app"]
+EXPOSE 2000
